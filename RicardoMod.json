@@ -1,0 +1,14 @@
+{
+  "id": "RaphMod",
+  "name": "Raph's Jokers",
+  "display_name": "The Godkers",
+  "author": ["Raph", "Brwnd"],
+  "description": "Personal Project",
+  "prefix": "raph",
+  "main_file": "main.lua",
+  "priority": 0,
+  "badge_colour": [255, 0, 255, 255],
+  "badge_text_colour": [0, 0, 0, 255],
+  "version": "0.1.0",
+  "dependencies": []
+}
