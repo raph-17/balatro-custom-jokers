@@ -19,7 +19,7 @@ SMODS.Joker {
     rarity = 2,
     cost = 6,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     blueprint_compat = true,
     eternal_compat = true,
 
@@ -29,9 +29,6 @@ SMODS.Joker {
 
     -- === LÓGICA ===
     loc_vars = function(self, info_queue, card)
-
-        print("MI ID REAL ES: " .. card.config.center.key)
-
         -- Calcular corazones segun baraja
         local current_threshold = 13
         if G.GAME and G.GAME.selected_back then
@@ -84,7 +81,7 @@ SMODS.Joker {
 
             if bonus > 0 then
                 return {
-                    message = "Policitemia!",
+                    message = "+ " .. bonus .. "  .",
                     mult_mod = bonus,
                     colour = G.C.MULT
                 }
