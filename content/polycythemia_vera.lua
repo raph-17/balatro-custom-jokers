@@ -4,15 +4,15 @@
 
 -- Atlas
 SMODS.Atlas {
-    key = 'policitemia_vera',
-    path = 'policitemia_vera.png',
+    key = 'polycythemia_vera_atlas',
+    path = 'polycythemia_vera.png',
     px = 71,
     py = 95
 }
 
 -- Joker
 SMODS.Joker {
-    key = 'policitemia',
+    key = 'polycythemia',
     config = { extra = { mult_gain = 6, threshold = 13 } },
 
     -- === ATRIBUTOS ===
@@ -24,7 +24,7 @@ SMODS.Joker {
     eternal_compat = true,
 
     -- === VISUAL ===
-    atlas = 'policitemia_vera',
+    atlas = 'polycythemia_vera_atlas',
     pos = { x = 0, y = 0 },
 
     -- === CALCULO DE INFORMACION A MOSTRAR ===

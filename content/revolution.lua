@@ -4,7 +4,7 @@
 
 -- Atlas
 SMODS.Atlas {
-    key = 'viva_la_revolucion',
+    key = 'revolution_atlas',
     path = 'placeholder.png',
     px = 71,
     py = 95
@@ -12,7 +12,7 @@ SMODS.Atlas {
 
 -- Joker
 SMODS.Joker {
-    key = 'revolucion',
+    key = 'revolution',
     config = { extra = { Xmult = 5 } },
 
     -- == ATRIBUTOS ==
@@ -24,7 +24,7 @@ SMODS.Joker {
     eternal_compat = true,
 
     -- === VISUAL ===
-    atlas = 'viva_la_revolucion',
+    atlas = 'revolution_atlas',
     pos = { x = 0, y = 0 },
 
     -- === CALCULO DE INFORMACION A MOSTRAR ===
@@ -40,7 +40,7 @@ SMODS.Joker {
         end
 
         -- Si es 0 mostrar "¡Activo!", sino el conteo
-        local status_text = (monarchy_count == 0) and localize('revolucion_active') or monarchy_count
+        local status_text = (monarchy_count == 0) and localize('revolution_active') or monarchy_count
 
         return { vars = { card.ability.extra.Xmult, status_text } }
     end,

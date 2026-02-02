@@ -1,36 +1,36 @@
 ---@diagnostic disable: duplicate-set-field
 -- Cargador de Jokers
-local archivos_jokers = {
-    "policitemia_vera",
-    "viva_la_revolucion"
+local jokers_files = {
+    "polycythemia_vera",
+    "revolution"
 }
 
-for _, nombre_archivo in ipairs(archivos_jokers) do
-    local archivo, error = SMODS.load_file("content/" .. nombre_archivo .. ".lua")
+for _, file_name in ipairs(jokers_files) do
+    local archivo, error = SMODS.load_file("content/" .. file_name .. ".lua")
 
     if error then
-        sendDebugMessage("ERROR cargando " .. nombre_archivo .. ": " .. error)
+        sendDebugMessage("ERROR loading " .. file_name .. ": " .. error)
     else
-        for _, nombre_archivo in ipairs(archivos_jokers) do
-    local archivo, err = SMODS.load_file("content/" .. nombre_archivo .. ".lua")
+        for _, file_name in ipairs(jokers_files) do
+            local archivo, err = SMODS.load_file("content/" .. file_name .. ".lua")
 
-    if err then
-        sendDebugMessage("ERROR cargando " .. nombre_archivo .. ": " .. err)
-    else
-        if type(archivo) == "function" then
-            archivo()
-        else
-            sendDebugMessage("ERROR cargando " .. nombre_archivo .. ": archivo es nil o no es una función")
+            if err then
+                sendDebugMessage("ERROR loading " .. file_name .. ": " .. err)
+            else
+                if type(archivo) == "function" then
+                    archivo()
+                else
+                    sendDebugMessage("ERROR loading " .. file_name .. ": file is nil or is not a function")
+                end
+            end
         end
-    end
-end
     end
 end
 
 -- ================================
 -- === FUNCION DE DESARROLLADOR ===
 -- ================================
--- Esta funcion permite al desarrollador invocar 
+-- Esta funcion permite al desarrollador invocar
 -- cualquier Joker para testear nuevos Jokers o sinergias
 
 local is_debug_typing = false
@@ -59,11 +59,11 @@ function love.keypressed(key)
             input_buffer = ""
             G.CONTROLLER.interrupt.focus = true
             play_sound('timpani')
-            sendDebugMessage("=== DEBUG: ESCRIBE EL ID ===")
+            sendDebugMessage("=== DEBUG: WRITE THE ID ===")
         else
             G.CONTROLLER.interrupt.focus = false
             play_sound('cancel')
-            sendDebugMessage("=== DEBUG CERRADO ===")
+            sendDebugMessage("=== DEBUG CLOSED ===")
         end
         return
     end
@@ -88,11 +88,11 @@ function love.keypressed(key)
                 G.jokers:emplace(card)
                 card:start_materialize()
                 play_sound('foil1')
-                sendDebugMessage(">>> INVOCADO: " .. full_id)
+                sendDebugMessage("SUMMONED: " .. full_id)
             else
                 -- Si no existe se cancela la accion y se notifica en consola
                 play_sound('cancel')
-                sendDebugMessage("ERROR: El ID '" .. full_id .. "' no existe en G.P_CENTERS")
+                sendDebugMessage("ERROR: The ID '" .. full_id .. "' does not exist in G.P_CENTERS")
             end
 
             input_buffer = ""

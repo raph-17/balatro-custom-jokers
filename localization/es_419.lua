@@ -1,7 +1,7 @@
 return {
     descriptions = {
         Joker = {
-            j_raph_policitemia = {
+            j_raph_polycythemia = {
                 name = "Policitemia Vera",
                 text = {
                     "Multi {C:mult}+#3#{} por cada carta",
@@ -11,7 +11,7 @@ return {
                 }
             },
 
-            j_raph_revolucion = {
+            j_raph_revolution = {
                 name = "¡Viva la Revolución!",
                 text = {
                     "Multi {X:mult,C:white} X#1# {} si no hay",
@@ -25,7 +25,7 @@ return {
 
     misc = {
         dictionary = {
-            revolucion_active = "¡Activo!"
+            revolution_active = "¡Activo!"
         }
     }
 }
