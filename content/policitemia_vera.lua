@@ -27,7 +27,7 @@ SMODS.Joker {
     atlas = 'policitemia_vera',
     pos = { x = 0, y = 0 },
 
-    -- === LOGICA ===
+    -- === CALCULO DE INFORMACION A MOSTRAR ===
     loc_vars = function(self, info_queue, card)
         -- Calcular corazones segun baraja
         local current_threshold = 13
@@ -42,7 +42,7 @@ SMODS.Joker {
                 current_threshold = 10
             end
         end
-        -- Contar corazones en juego y calcular puntaje
+        -- Contar corazones en juego y calcular puntaje actual del Joker
         local hearts = 0
         if G.playing_cards then
             for _, v in ipairs(G.playing_cards) do
@@ -54,7 +54,7 @@ SMODS.Joker {
         return { vars = { bonus, current_threshold, card.ability.extra.mult_gain } }
     end,
 
-    -- === CALCULO EN JUEGO ===
+    -- === CALCULO DURANTE ACTIVACION EN JUEGO ===
     calculate = function(self, card, context)
         if context.joker_main then
             -- Calcular corazones segun baraja
@@ -79,7 +79,7 @@ SMODS.Joker {
             end
 
             local bonus = math.max(0, hearts - current_threshold) * card.ability.extra.mult_gain
-
+            -- Adicionar puntaje
             if bonus > 0 then
                 return {
                     message = localize { type = 'variable', key = 'a_mult', vars = { bonus } },

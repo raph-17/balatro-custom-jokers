@@ -27,7 +27,7 @@ SMODS.Joker {
     atlas = 'viva_la_revolucion',
     pos = { x = 0, y = 0 },
 
-    -- === LOGICA ===
+    -- === CALCULO DE INFORMACION A MOSTRAR ===
     loc_vars = function(self, info_queue, card)
         -- Contar reyes y reinas totales en la baraja completa
         local monarchy_count = 0
@@ -45,7 +45,7 @@ SMODS.Joker {
         return { vars = { card.ability.extra.Xmult, status_text } }
     end,
 
-    -- === CALCULO EN JUEGO ===
+    -- === CALCULO DURANTE ACTIVACION EN JUEGO ===
     calculate = function(self, card, context)
         if context.joker_main then
             local monarchy_count = 0
