@@ -1,3 +1,4 @@
+---@diagnostic disable: duplicate-set-field
 -- Cargador de Jokers
 local archivos_jokers = {
     "policitemia_vera",
@@ -10,7 +11,19 @@ for _, nombre_archivo in ipairs(archivos_jokers) do
     if error then
         sendDebugMessage("ERROR cargando " .. nombre_archivo .. ": " .. error)
     else
-        archivo()
+        for _, nombre_archivo in ipairs(archivos_jokers) do
+    local archivo, err = SMODS.load_file("content/" .. nombre_archivo .. ".lua")
+
+    if err then
+        sendDebugMessage("ERROR cargando " .. nombre_archivo .. ": " .. err)
+    else
+        if type(archivo) == "function" then
+            archivo()
+        else
+            sendDebugMessage("ERROR cargando " .. nombre_archivo .. ": archivo es nil o no es una función")
+        end
+    end
+end
     end
 end
 
