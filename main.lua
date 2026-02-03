@@ -116,5 +116,5 @@ end
 -- === INTEGRACIÓN CON JOKER DISPLAY ===
 -- =====================================
 if JokerDisplay then
-    SMODS.load_file("raph_display_definitions.lua")()
+    SMODS.load_file("definitions/raph_display_definitions.lua")()
 end
