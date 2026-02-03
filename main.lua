@@ -111,3 +111,10 @@ function love.keypressed(key)
     -- === CASO 3: DEJAR QUE EL JUEGO FUNCIONE CON NORMALIDAD ===
     if old_keypressed then old_keypressed(key) end
 end
+
+-- =====================================
+-- === INTEGRACIÓN CON JOKER DISPLAY ===
+-- =====================================
+if JokerDisplay then
+    SMODS.load_file("raph_display_definitions.lua")()
+end
