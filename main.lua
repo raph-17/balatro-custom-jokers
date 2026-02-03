@@ -6,19 +6,19 @@ local jokers_files = {
 }
 
 for _, file_name in ipairs(jokers_files) do
-    local archivo, error = SMODS.load_file("content/" .. file_name .. ".lua")
+    local file, error = SMODS.load_file("content/" .. file_name .. ".lua")
 
     if error then
         sendDebugMessage("ERROR loading " .. file_name .. ": " .. error)
     else
         for _, file_name in ipairs(jokers_files) do
-            local archivo, err = SMODS.load_file("content/" .. file_name .. ".lua")
+            local file, err = SMODS.load_file("content/" .. file_name .. ".lua")
 
             if err then
                 sendDebugMessage("ERROR loading " .. file_name .. ": " .. err)
             else
-                if type(archivo) == "function" then
-                    archivo()
+                if type(file) == "function" then
+                    file()
                 else
                     sendDebugMessage("ERROR loading " .. file_name .. ": file is nil or is not a function")
                 end
