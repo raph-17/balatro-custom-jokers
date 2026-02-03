@@ -5,7 +5,7 @@
 -- Atlas
 SMODS.Atlas {
     key = 'revolution_atlas',
-    path = 'placeholder.png',
+    path = 'revolution_sprite.png',
     px = 71,
     py = 95
 }
