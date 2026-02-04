@@ -68,6 +68,12 @@ function love.keypressed(key)
         return
     end
 
+    if is_debug_typing then
+        if key == 'backspace' then
+            is_debug_typing = false
+        end
+    end
+
     -- === CASO 2: ESCRIBIR EN LA CONSOLA ===
     if is_debug_typing then
         if key == 'return' or key == 'kpenter' then
