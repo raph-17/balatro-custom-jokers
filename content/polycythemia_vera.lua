@@ -13,7 +13,7 @@ SMODS.Atlas {
 -- Joker
 SMODS.Joker {
     key = 'polycythemia',
-    config = { extra = { mult_gain = 6, threshold = 13 } },
+    config = { extra = { mult_gain = 3, threshold = 13 } },
 
     -- === ATRIBUTOS ===
     rarity = 2,
