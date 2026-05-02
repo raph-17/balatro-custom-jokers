@@ -2,7 +2,8 @@
 -- Cargador de Jokers
 local jokers_files = {
     "polycythemia_vera",
-    "revolution"
+    "revolution",
+    "wish_you_were_here"
 }
 
 for _, file_name in ipairs(jokers_files) do
@@ -82,18 +83,28 @@ function love.keypressed(key)
 
             -- Construir el ID
             local full_id = input_buffer
-            if string.sub(full_id, 1, 2) ~= "j_" then
-                full_id = "j_" .. full_id
-            end
 
             -- FILTRO DE SEGURIDAD
             if G.P_CENTERS[full_id] then
                 -- Si el Joker existe se procede a crear
                 local card = create_card('Joker', G.jokers, nil, nil, nil, nil, full_id)
                 card:add_to_deck()
-                G.jokers:emplace(card)
-                card:start_materialize()
-                play_sound('foil1')
+                if string.sub(full_id, 1, 2) == "j_" then
+                    G.jokers:emplace(card)
+                    card:start_materialize()
+                    play_sound('foil1')
+                end
+
+                if string.sub(full_id, 1, 2) == "c_" then
+                    G.consumeables:emplace(card)
+                    play_sound('foil2')
+                end
+
+                if string.sub(full_id, 1, 2) == "v_" then
+                    G.vouchers:emplace(card)
+                    play_sound('foil2')
+                end
+
                 sendDebugMessage("SUMMONED: " .. full_id)
             else
                 -- Si no existe se cancela la accion y se notifica en consola
