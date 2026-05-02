@@ -19,6 +19,17 @@ return {
                     "in your full deck",
                     "{C:inactive}(Currently {C:attention}#2#{}{C:inactive})"
                 }
+            },
+
+            j_raph_wish_you_were_here = {
+                name = "Wish You Were Here",
+                text = {
+                    "Copies the ability of the",
+                    "last joker sold",
+                    "in this run",
+                    "{C:inactive}(Copying: {C:attention}#1#{}{C:inactive})",
+                    "{C:green}Does not occupy Joker slot{}"
+                }
             }
         }
     },
@@ -26,6 +37,7 @@ return {
     misc = {
         dictionary = {
             revolution_active = "Active!",
+            wish_none = "None"
         }
     }
 }

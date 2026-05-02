@@ -19,13 +19,25 @@ return {
                     "en la baraja completa",
                     "{C:inactive}(Actual {C:attention}#2#{}{C:inactive})"
                 }
+            },
+
+            j_raph_wish_you_were_here = {
+                name = "Wish You Were Here",
+                text = {
+                    "Copia la habilidad del",
+                    "último joker vendido",
+                    "en esta partida",
+                    "{C:inactive}(Copiando: {C:attention}#1#{}{C:inactive})",
+                    "{C:green}No ocupa espacio de Comodín{}"
+                }
             }
         }
     },
 
     misc = {
         dictionary = {
-            revolution_active = "¡Activo!"
+            revolution_active = "¡Activo!",
+            wish_none = "Ninguno"
         }
     }
 }
