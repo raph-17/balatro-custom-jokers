@@ -5,7 +5,7 @@
 -- Atlas
 SMODS.Atlas {
     key = 'polycythemia_vera_atlas',
-    path = 'polycythemia_vera.png',
+    path = 'polycythemia_vera_sprite.png',
     px = 71,
     py = 95
 }
