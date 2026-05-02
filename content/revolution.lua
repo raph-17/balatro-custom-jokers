@@ -16,7 +16,7 @@ SMODS.Joker {
     config = { extra = { Xmult = 5 } },
 
     -- == ATRIBUTOS ==
-    rarity = 3,
+    rarity = 2,
     cost = 7,
     unlocked = true,
     discovered = false,
